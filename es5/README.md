@@ -19,8 +19,6 @@
   1. [分号](#semicolons)
   1. [类型转化](#type-casting--coercion)
   1. [命名规则](#naming-conventions)
-  1. [存取器](#accessors)
-  1. [构造函数](#constructors)
   1. [事件](#events)
   1. [模块](#modules)
   1. [jQuery](#jquery)
@@ -308,8 +306,6 @@
     }
     ```
 
-  - 了解更多信息在 [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting) by [Ben Cherry](http://www.adequatelygood.com/).
-
 **[⬆ 回到顶部](#table-of-contents)**
 
 
@@ -357,7 +353,6 @@
     }
     ```
 
-  - 了解更多信息在 [Truth Equality and JavaScript](http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) by Angus Croll.
 
 **[⬆ 回到顶部](#table-of-contents)**
 
@@ -371,7 +366,6 @@
     if (test)
       return false;
 
-    // good
     if (test) return false;
 
     // good
@@ -415,93 +409,8 @@
 
 ## <a name="comments">注释</a>
 
-  - 使用 `/** ... */` 作为多行注释。包含描述、指定所有参数和返回值的类型和值。
+  - 函数开头应该注释说明函数用途
 
-    ```javascript
-    // bad
-    // make() returns a new element
-    // based on the passed in tag name
-    //
-    // @param {String} tag
-    // @return {Element} element
-    function make(tag) {
-
-      // ...stuff...
-
-      return element;
-    }
-
-    // good
-    /**
-     * make() returns a new element
-     * based on the passed in tag name
-     *
-     * @param {String} tag
-     * @return {Element} element
-     */
-    function make(tag) {
-
-      // ...stuff...
-
-      return element;
-    }
-    ```
-
-  - 使用 `//` 作为单行注释。在评论对象上面另起一行使用单行注释。在注释前插入空行。
-
-    ```javascript
-    // bad
-    var active = true;  // is current tab
-
-    // good
-    // is current tab
-    var active = true;
-
-    // bad
-    function getType() {
-      console.log('fetching type...');
-      // set the default type to 'no type'
-      var type = this.type || 'no type';
-
-      return type;
-    }
-
-    // good
-    function getType() {
-      console.log('fetching type...');
-
-      // set the default type to 'no type'
-      var type = this.type || 'no type';
-
-      return type;
-    }
-    ```
-
-  - 给注释增加 `FIXME` 或 `TODO` 的前缀可以帮助其他开发者快速了解这是一个需要复查的问题，或是给需要实现的功能提供一个解决方式。这将有别于常见的注释，因为它们是可操作的。使用 `FIXME -- need to figure this out` 或者 `TODO -- need to implement`。
-
-  - 使用 `// FIXME:` 标注问题。
-
-    ```javascript
-    function Calculator() {
-
-      // FIXME: shouldn't use a global here
-      total = 0;
-
-      return this;
-    }
-    ```
-
-  - 使用 `// TODO:` 标注问题的解决方式。
-
-    ```javascript
-    function Calculator() {
-
-      // TODO: total should be configurable by an options param
-      this.total = 0;
-
-      return this;
-    }
-    ```
 
 **[⬆ 回到顶部](#table-of-contents)**
 
@@ -585,30 +494,6 @@
 
     // good
     var x = y + 5;
-    ```
-
-  - 在文件末尾插入一个空行。
-
-    ```javascript
-    // bad
-    (function (global) {
-      // ...stuff...
-    })(this);
-    ```
-
-    ```javascript
-    // bad
-    (function (global) {
-      // ...stuff...
-    })(this);↵
-    ↵
-    ```
-
-    ```javascript
-    // good
-    (function (global) {
-      // ...stuff...
-    })(this);↵
     ```
 
 **[⬆ 回到顶部](#table-of-contents)**
@@ -710,4 +595,3 @@
   - 私有变量使用下划线前缀。
 
 **[⬆ 回到顶部](#table-of-contents)**
-
